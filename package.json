@@ -1,0 +1,25 @@
+{
+  "name": "react-konami",
+  "version": "0.1.0",
+  "description": "A simple component to add an easterEggs in your react web application",
+  "main": "./build/Konami.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FloValence/react-konami.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "keywords": [
+    "konami",
+    "react",
+    "component"
+  ],
+  "author": "Florian Valence <florian.m.valence@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.3.0"
+  },
+  "devDependencies": {}
+}
