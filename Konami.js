@@ -5,8 +5,7 @@ class Konami extends Component {
   constructor(props) {
     super(props)
 
-    this.keys = []
-    this.resetKeys = () => null
+    this.n = 0
     this.onKeydown = this.onKeydown.bind(this)
   }
 
@@ -15,15 +14,15 @@ class Konami extends Component {
   }
 
   onKeydown(e) {
-    clearTimeout(this.resetKeys)
-    this.keys.push(e.keyCode)
-    if (this.keys.toString().indexOf(this.props.konami) >= 0) {
-      if (this.props.unbindAfterUse) {
-        document.removeEventListener('keydown', this.onKeydown)
-      }
-      return this.props.easterEgg()
+     if (e.keyCode === this.props.konami[n++]) {
+        if (this.n === this.props.konami.length) {
+            this.props.easterEgg()
+            this.n = 0
+            return false
+        }
+    } else {
+        n = 0
     }
-    this.resetKeys = setTimeout(() => { this.keys = [] }, this.props.resetTimeout)
   }
 
   render() {
@@ -33,17 +32,14 @@ class Konami extends Component {
 
 Konami.propTypes = {
   easterEgg: PropTypes.func.isRequired,
-  konami: PropTypes.string,
-  unbindAfterUse: PropTypes.bool,
-  resetTimeout: PropTypes.number.isRequired
+  konami: PropTypes.string
 }
 
 Konami.defaultProps = {
   easterEgg() {
-    alert('Hell Yeah')
+    alert('Hell Yeah !!')
   },
-  konami: '38,38,40,40,37,39,37,39,66,65',
-  resetTimeout: 600000
+  konami: [38,38,40,40,37,39,37,39,66,65]
 }
 
 export default Konami
