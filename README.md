@@ -2,6 +2,9 @@
 
 A simple react component to add easterEggs to your web applications
 
+## Hom to install
+`npm install --save react-konami`
+
 ## How to use
 Import the component, render it and you're all set
 
