@@ -20,12 +20,9 @@ var Konami = function (_Component) {
   function Konami(props) {
     _classCallCheck(this, Konami);
 
-    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Konami).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Konami.__proto__ || Object.getPrototypeOf(Konami)).call(this, props));
 
-    _this.keys = [];
-    _this.resetKeys = function () {
-      return null;
-    };
+    _this.n = 0;
     _this.onKeydown = _this.onKeydown.bind(_this);
     return _this;
   }
@@ -38,19 +35,15 @@ var Konami = function (_Component) {
   }, {
     key: 'onKeydown',
     value: function onKeydown(e) {
-      var _this2 = this;
-
-      clearTimeout(this.resetKeys);
-      this.keys.push(e.keyCode);
-      if (this.keys.toString().indexOf(this.props.konami) >= 0) {
-        if (this.props.unbindAfterUse) {
-          document.removeEventListener('keydown', this.onKeydown);
+      if (e.keyCode === this.props.konami[n++]) {
+        if (this.n === this.props.konami.length) {
+          this.props.easterEgg();
+          this.n = 0;
+          return false;
         }
-        return this.props.easterEgg();
+      } else {
+        n = 0;
       }
-      this.resetKeys = setTimeout(function () {
-        _this2.keys = [];
-      }, this.props.resetTimeout);
     }
   }, {
     key: 'render',
@@ -64,18 +57,15 @@ var Konami = function (_Component) {
 
 Konami.propTypes = {
   easterEgg: _react.PropTypes.func.isRequired,
-  konami: _react.PropTypes.string,
-  unbindAfterUse: _react.PropTypes.bool,
-  resetTimeout: _react.PropTypes.number.isRequired
+  konami: _react.PropTypes.string
 };
 
 Konami.defaultProps = {
   easterEgg: function easterEgg() {
-    alert('Hell Yeah');
+    alert('Hell Yeah !!');
   },
 
-  konami: '38,38,40,40,37,39,37,39,66,65',
-  resetTimeout: 600000
+  konami: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
 };
 
 exports.default = Konami;
