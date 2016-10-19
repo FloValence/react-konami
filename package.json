@@ -8,7 +8,8 @@
     "url": "git+https://github.com/FloValence/react-konami.git"
   },
   "scripts": {
-    "build": "rimraf build && babel Konami.js -d build"
+    "build": "rimraf build && babel Konami.js -d build",
+    "version": "npm run build && git add -A build"
   },
   "keywords": [
     "konami",
