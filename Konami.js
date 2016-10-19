@@ -21,7 +21,7 @@ class Konami extends Component {
             return false
         }
     } else {
-        n = 0
+        this.n = 0
     }
   }
 
@@ -32,13 +32,10 @@ class Konami extends Component {
 
 Konami.propTypes = {
   easterEgg: PropTypes.func.isRequired,
-  konami: PropTypes.string
+  konami: PropTypes.arrayOf(PropTypes.number)
 }
 
 Konami.defaultProps = {
-  easterEgg() {
-    alert('Hell Yeah !!')
-  },
   konami: [38,38,40,40,37,39,37,39,66,65]
 }
 
