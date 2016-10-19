@@ -14,7 +14,7 @@ class Konami extends Component {
   }
 
   onKeydown(e) {
-     if (e.keyCode === this.props.konami[n++]) {
+     if (e.keyCode === this.props.konami[this.n++]) {
         if (this.n === this.props.konami.length) {
             this.props.easterEgg()
             this.n = 0
