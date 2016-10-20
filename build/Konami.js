@@ -33,6 +33,11 @@ var Konami = function (_Component) {
       document.addEventListener('keydown', this.onKeydown);
     }
   }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      document.removeEventListener('keydown', this.onKeydown);
+    }
+  }, {
     key: 'onKeydown',
     value: function onKeydown(e) {
       if (e.keyCode === this.props.konami[this.n++]) {
