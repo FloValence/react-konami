@@ -35,14 +35,14 @@ var Konami = function (_Component) {
   }, {
     key: 'onKeydown',
     value: function onKeydown(e) {
-      if (e.keyCode === this.props.konami[n++]) {
+      if (e.keyCode === this.props.konami[this.n++]) {
         if (this.n === this.props.konami.length) {
           this.props.easterEgg();
           this.n = 0;
           return false;
         }
       } else {
-        n = 0;
+        this.n = 0;
       }
     }
   }, {
@@ -57,14 +57,10 @@ var Konami = function (_Component) {
 
 Konami.propTypes = {
   easterEgg: _react.PropTypes.func.isRequired,
-  konami: _react.PropTypes.string
+  konami: _react.PropTypes.arrayOf(_react.PropTypes.number)
 };
 
 Konami.defaultProps = {
-  easterEgg: function easterEgg() {
-    alert('Hell Yeah !!');
-  },
-
   konami: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
 };
 
