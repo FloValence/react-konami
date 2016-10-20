@@ -13,6 +13,10 @@ class Konami extends Component {
     document.addEventListener('keydown', this.onKeydown)
   }
 
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.onKeydown)
+  }
+
   onKeydown(e) {
      if (e.keyCode === this.props.konami[this.n++]) {
         if (this.n === this.props.konami.length) {
