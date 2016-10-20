@@ -12,4 +12,4 @@ Import the component, render it and you're all set
 | Type        | Key                 | Description
 |------------ |---------------------|---------------------------------------------------------
 | (func)      | `easterEgg`         | what happens when you enter the konami code (optional)
-| (array)     | `konami`            | you can change the key combination (array of strings) (optional)
+| (array)     | `konami`            | you can change the key combination (array of ascii keycodes) (optional)
