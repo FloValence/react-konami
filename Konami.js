@@ -14,6 +14,13 @@ class Konami extends Component {
     document.addEventListener('keydown', this.onKeydown)
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.resetDelay !== this.props.resetDelay) {
+      this.delayOff()
+      this.delayOn()
+    }
+  }
+
   componentWillUnmount() {
     document.removeEventListener('keydown', this.onKeydown)
     this.delayOff()
