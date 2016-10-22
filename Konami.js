@@ -19,6 +19,10 @@ class Konami extends Component {
       this.delayOff()
       this.delayOn()
     }
+    if (nextProps.konami.join('') !== this.props.konami.join('')) {
+      this.resetN()
+      this.delayOff()
+    }
   }
 
   componentWillUnmount() {
