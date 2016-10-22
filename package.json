@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "rimraf build && babel Konami.js -d build",
-    "version": "npm run build && git add -A build"
+    "version": "npm run build && git add -Af build"
   },
   "keywords": [
     "konami",
