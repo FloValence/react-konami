@@ -36,7 +36,8 @@ class Konami extends Component {
 
   delayOn() {
      this.delayOff()
-     this.delayId = setTimeout(() => this.resetN(), this.props.resetDelay)
+     if (this.props.resetDelay > 0)
+        this.delayId = setTimeout(() => this.resetN(), this.props.resetDelay)
   }
 
   resetN() { this.n = 0 }
