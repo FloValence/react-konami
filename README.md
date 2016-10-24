@@ -13,3 +13,4 @@ Import the component, render it and you're all set
 |------------ |---------------------|---------------------------------------------------------
 | (func)      | `easterEgg`         | what happens when you enter the konami code (required)
 | (array)     | `konami`            | you can change the key combination (array of ascii keycodes) (optional)
+| (number)    | `resetDelay`        | time you have between keystroke to complete the konami code (optional)
