@@ -19,7 +19,7 @@ class Konami extends Component {
     const resetDelayHasChanged = resetDelay !== this.props.resetDelay
     if (resetDelayHasChanged && resetDelay <= 0) {
       this.delayOff()
-    else if (resetDelayHasChanged) {
+    } else if (resetDelayHasChanged) {
       this.delayOff()
       this.delayOn()
     }
