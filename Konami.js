@@ -69,7 +69,7 @@ Konami.propTypes = {
 }
 
 Konami.defaultProps = {
-  resetDelay: 1500,
+  resetDelay: 2000,
   konami: [38,38,40,40,37,39,37,39,66,65],
 }
 
