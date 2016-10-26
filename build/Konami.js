@@ -23,6 +23,7 @@ var Konami = function (_Component) {
     var _this = _possibleConstructorReturn(this, (Konami.__proto__ || Object.getPrototypeOf(Konami)).call(this, props));
 
     _this.n = 0;
+    _this.delayId = null;
     _this.onKeydown = _this.onKeydown.bind(_this);
     return _this;
   }
@@ -33,21 +34,63 @@ var Konami = function (_Component) {
       document.addEventListener('keydown', this.onKeydown);
     }
   }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      var resetDelay = nextProps.resetDelay;
+
+      var resetDelayHasChanged = resetDelay !== this.props.resetDelay;
+      if (resetDelayHasChanged && resetDelay <= 0) {
+        this.delayOff();
+      } else if (resetDelayHasChanged) {
+        this.delayOff();
+        this.delayOn();
+      }
+      if (nextProps.konami.join('') !== this.props.konami.join('')) {
+        this.resetN();
+        this.delayOff();
+      }
+    }
+  }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       document.removeEventListener('keydown', this.onKeydown);
+      this.delayOff();
+    }
+  }, {
+    key: 'delayOff',
+    value: function delayOff() {
+      if (this.delayId) clearTimeout(this.delayId);
+    }
+  }, {
+    key: 'delayOn',
+    value: function delayOn() {
+      var _this2 = this;
+
+      if (this.props.resetDelay <= 0) return;
+      this.delayOff();
+      this.delayId = setTimeout(function () {
+        return _this2.resetN();
+      }, this.props.resetDelay);
+    }
+  }, {
+    key: 'resetN',
+    value: function resetN() {
+      this.n = 0;
     }
   }, {
     key: 'onKeydown',
     value: function onKeydown(e) {
       if (e.keyCode === this.props.konami[this.n++]) {
+        this.delayOn();
         if (this.n === this.props.konami.length) {
           this.props.easterEgg();
-          this.n = 0;
+          this.resetN();
+          this.delayOff();
           return false;
         }
       } else {
-        this.n = 0;
+        this.resetN();
+        this.delayOff();
       }
     }
   }, {
@@ -62,10 +105,12 @@ var Konami = function (_Component) {
 
 Konami.propTypes = {
   easterEgg: _react.PropTypes.func.isRequired,
-  konami: _react.PropTypes.arrayOf(_react.PropTypes.number)
+  konami: _react.PropTypes.arrayOf(_react.PropTypes.number),
+  resetDelay: _react.PropTypes.number
 };
 
 Konami.defaultProps = {
+  resetDelay: 2000,
   konami: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
 };
 
