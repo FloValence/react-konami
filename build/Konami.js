@@ -36,7 +36,12 @@ var Konami = function (_Component) {
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.resetDelay !== this.props.resetDelay) {
+      var resetDelay = nextProps.resetDelay;
+
+      var resetDelayHasChanged = resetDelay !== this.props.resetDelay;
+      if (resetDelayHasChanged && resetDelay <= 0) {
+        this.delayOff();
+      } else if (resetDelayHasChanged) {
         this.delayOff();
         this.delayOn();
       }
@@ -61,6 +66,7 @@ var Konami = function (_Component) {
     value: function delayOn() {
       var _this2 = this;
 
+      if (this.props.resetDelay <= 0) return;
       this.delayOff();
       this.delayId = setTimeout(function () {
         return _this2.resetN();
@@ -104,7 +110,7 @@ Konami.propTypes = {
 };
 
 Konami.defaultProps = {
-  resetDelay: 1500,
+  resetDelay: 2000,
   konami: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
 };
 
