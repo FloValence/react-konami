@@ -74,13 +74,24 @@ var Konami = function (_Component) {
     }
   }, {
     key: 'resetN',
-    value: function resetN() {
+    value: function resetN(keyCode) {
+      if (!keyCode) {
+        this.n = 0;
+        return;
+      }
+
+      let count = 1;
+      while (this.n-- > 0 && this.props.konami[this.n] === keyCode)
+        count++;
       this.n = 0;
+      while (count-- > 0 && this.props.konami[this.n] === keyCode)
+        this.n++;
     }
   }, {
     key: 'onKeydown',
     value: function onKeydown(e) {
-      if (e.keyCode === this.props.konami[this.n++]) {
+      if (e.keyCode === this.props.konami[this.n]) {
+        this.n++;
         this.delayOn();
         if (this.n === this.props.konami.length) {
           this.props.easterEgg();
@@ -89,7 +100,7 @@ var Konami = function (_Component) {
           return false;
         }
       } else {
-        this.resetN();
+        this.resetN(e.keyCode);
         this.delayOff();
       }
     }
