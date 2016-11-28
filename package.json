@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "rimraf build && babel Konami.js -d build",
-    "version": "npm run build && git add -A build"
+    "precommit": "npm run build && git add -A build"
   },
   "keywords": [
     "konami",
@@ -26,6 +26,7 @@
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-2": "^6.17.0",
+    "husky": "^0.11.9",
     "rimraf": "^2.5.4"
   }
 }
