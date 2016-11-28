@@ -80,12 +80,13 @@ var Konami = function (_Component) {
         return;
       }
 
-      let count = 1;
-      while (this.n-- > 0 && this.props.konami[this.n] === keyCode)
+      var count = 1;
+      while (this.n-- > 0 && this.props.konami[this.n] === keyCode) {
         count++;
-      this.n = 0;
-      while (count-- > 0 && this.props.konami[this.n] === keyCode)
+      }this.n = 0;
+      while (count-- > 0 && this.props.konami[this.n] === keyCode) {
         this.n++;
+      }
     }
   }, {
     key: 'onKeydown',
