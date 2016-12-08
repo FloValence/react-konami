@@ -1,0 +1,6 @@
+{
+  "name": "React-konami",
+  "tagline": "A simple component to add an easterEggs in your react web application",
+  "body": "# react-konami\r\n\r\nA simple react component to add easterEggs to your web applications\r\n\r\n## How to install\r\n`npm install --save react-konami`\r\n\r\n## How to use\r\nImport the component, render it and you're all set\r\n\r\n### Options\r\n| Type        | Key                 | Description\r\n|------------ |---------------------|---------------------------------------------------------\r\n| (func)      | `easterEgg`         | what happens when you enter the konami code (required)\r\n| (array)     | `konami`            | you can change the key combination (array of ascii keycodes) (optional)\r\n| (number)    | `resetDelay`        | time you have between keystroke to complete the konami code (optional)\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
