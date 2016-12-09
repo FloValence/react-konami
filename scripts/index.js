@@ -141,16 +141,22 @@ var HelloWorld = React.createClass({
       React.createElement(
         'label',
         null,
-        'Enter your name :'
+        'Enter your name : '
       ),
       React.createElement('input', { onChange: this.updateName }),
       React.createElement('br', null),
       React.createElement(
+        'button',
+        null,
+        'Focus on me'
+      ),
+      React.createElement('br', null),
+      React.createElement(
         'span',
         null,
-        'Then type the secret code ;-)'
+        'Then type the secret code ;-) Konami code activated'
       ),
-      React.createElement(Konami, { easterEgg: this.wellDone() })
+      React.createElement(Konami, { easterEgg: this.wellDone })
     );
   }
 });
