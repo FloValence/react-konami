@@ -1,6 +1,6 @@
 {
   "name": "react-konami",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "A simple component to add an easterEggs in your react web application",
   "main": "./build/Konami.js",
   "repository": {
