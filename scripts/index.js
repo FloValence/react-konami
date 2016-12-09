@@ -151,4 +151,4 @@ var HelloWorld = React.createClass({
   }
 });
 
-React.render(React.createElement(HelloWorld, null), document.getElementById('app'));
+ReactDOM.render(React.createElement(HelloWorld, null), document.getElementById('app'));
