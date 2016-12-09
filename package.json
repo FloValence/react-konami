@@ -14,9 +14,12 @@
   },
   "keywords": [
     "konami",
+    "code",
+    "konamicode",
     "react",
     "component"
   ],
+  "homepage": "https://flovalence.github.io/react-konami",
   "author": "Florian Valence <florian.m.valence@gmail.com>",
   "license": "ISC",
   "dependencies": {
