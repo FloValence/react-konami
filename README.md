@@ -1,6 +1,7 @@
-# react-konami
+# [react-konami](https://flovalence.github.io/react-konami)
 
 A simple react component to add easterEggs to your web applications
+[See demo page](https://flovalence.github.io/react-konami/demo.html)
 
 ## How to install
 `npm install --save react-konami`
