@@ -9,7 +9,8 @@
   },
   "scripts": {
     "build": "rimraf build && babel Konami.js -d build",
-    "precommit": "npm run build && git add -A build"
+    "watch": "babel Konami.js -d build --watch",
+    "prepublish": "npm prune && npm run build"
   },
   "keywords": [
     "konami",
