@@ -132,7 +132,7 @@ var HelloWorld = React.createClass({
     this.setState({ name: e.target.value });
   },
   wellDone: function wellDone() {
-    alert('Well done ' + this.state.name + '!');
+    alert('Well done ' + this.state.name + '! Konami code activated');
   },
   render: function render() {
     return React.createElement(
@@ -154,7 +154,7 @@ var HelloWorld = React.createClass({
       React.createElement(
         'span',
         null,
-        'Then type the secret code ;-) Konami code activated'
+        'Then type the secret code ;-)'
       ),
       React.createElement(Konami, { easterEgg: this.wellDone })
     );
