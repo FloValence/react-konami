@@ -122,7 +122,11 @@ Konami.defaultProps = {
 };
 
 var HelloWorld = React.createClass({
-  displayName: 'HelloWorld',
+  getInitialState: function getInitialState() {
+    return {
+      name: 'you'
+    }
+  },
 
   updateName: function updateName(e) {
     this.setState({ name: e.target.value });
