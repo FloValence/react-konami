@@ -1,7 +1,7 @@
-import { Component, PropTypes } from 'react'
+import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Konami extends Component {
-
   constructor(props) {
     super(props)
 
