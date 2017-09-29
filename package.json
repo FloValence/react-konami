@@ -10,7 +10,7 @@
   "scripts": {
     "build": "rimraf build && babel Konami.js -d build",
     "watch": "babel Konami.js -d build --watch",
-    "prepublish": "npm prune && npm run build"
+    "prepublishOnly": "npm prune && npm run build"
   },
   "keywords": [
     "konami",
