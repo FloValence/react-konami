@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["es2017", "dom"],
+    "declaration": true,
+    "jsx": "react",
+    "outDir": "./build",
+    "strict": true,
+    "esModuleInterop": true
+  }
+}

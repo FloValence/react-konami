@@ -9,6 +9,8 @@ A simple react component to add easterEggs to your web applications
 ## How to use
 Import the component, render it and you're all set
 
+If you use TypeScript the definition is contained in the package.
+
 ### Options
 | Type        | Key                 | Description
 |------------ |---------------------|---------------------------------------------------------
