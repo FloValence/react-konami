@@ -1,6 +1,6 @@
 {
   "name": "react-konami",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "A simple component to add an easterEggs in your react web application",
   "main": "./build/Konami.js",
   "types": "./build/Konami.d.ts",
@@ -9,8 +9,8 @@
     "url": "git+https://github.com/FloValence/react-konami.git"
   },
   "scripts": {
-    "build": "rimraf build && tsc -p",
-    "watch": "tsc --watch -p \"./\" ",
+    "build": "rimraf build && tsc -p \"./\"",
+    "watch": "tsc --watch -p \"./\"",
     "prepublishOnly": "npm prune && npm run build"
   },
   "keywords": [
@@ -25,10 +25,10 @@
   "author": "Florian Valence <florian.m.valence@gmail.com>",
   "license": "ISC",
   "peerDependencies": {
-    "react": ">=16.0.0"
+    "react": ">=15.4.0"
   },
   "devDependencies": {
-    "@types/react": "^16.8.25",
+    "@types/react": "^15.4.0",
     "husky": "^0.11.9",
     "rimraf": "^2.5.4"
   }
